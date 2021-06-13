@@ -6,9 +6,9 @@
 # def index():
 #     return "Hi, im from 'mastermind/app/module_one/example.py'"
 
+print('ExampleClass')
+
 class ExampleClass:
     def __init__(self):
-        print('test')
-        
-    def hi():
-        return 'example :)'
+        self.example = 'it works :)'
+

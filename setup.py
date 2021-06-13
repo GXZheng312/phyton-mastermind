@@ -1,8 +1,11 @@
+import mastermind
 from flask import Flask
-# from mastermind.app.test.example import ExampleClass
 
 app = Flask(__name__)
 
+# ObjectClass = mastermind.app.module_one.ExampleClass() # import mastermind.blah.blah.blah
+ObjectClass = mastermind.app.module_one.example.ExampleClass() # from * import package....
+
 @app.route('/')
 def hello_world():
-    return "hi"
+    return ObjectClass.example
