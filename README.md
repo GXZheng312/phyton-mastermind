@@ -12,7 +12,7 @@ source ./venv/Scripts/activate
 ```
 To run flask on development (windows):
 ```bash
-FLASK_APP=app.py FLASK_ENV=development flask run
+FLASK_APP=setup.py FLASK_ENV=development flask run
 ```
 
 ## Usage
