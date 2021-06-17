@@ -1,7 +1,7 @@
-class ClassOne:
-    def __init__(self):
-        self.test = 'this works :)'
+def index():
+    data = {
+        'name': 'Ody',
+        'pets': ['doggo', 'cat', 'fish']
+    }
 
-class ClassTwo:
-    def __init__(self):
-        self.test = 'this works :)'
+    return data

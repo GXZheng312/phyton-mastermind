@@ -11,7 +11,6 @@ def index():
 
 @web.route('/leaderboard')
 def leaderboard():
-    myData = controllers.HomeController.index()
+    myData = controllers.LeaderboardController.index()
     
     return render_template('index.html', data=myData)
-
