@@ -1,4 +1,3 @@
 # import mastermind.app.package_one
-from . import package_one, package_two
+from . import game, controller
 
-print('app')
