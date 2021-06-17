@@ -1,4 +1,3 @@
 # from mastermind.app.module_one.example import ExampleClass
-from . import module_one, module_two
+from . import HomeController, LeaderboardController
 
-print('package_two')
