@@ -4,8 +4,15 @@
         {% include 'layouts/components/header.html' %}
     </head>
     <body>
-        <div>
-            {% block content %}{% endblock %} 
+        <div class="container-fluid platform">
+            <div class="row">
+                <div class="col m-4 border border-3 rounded bg-light">
+                    {% block content %}{% endblock %} 
+                </div>
+                <div class="col-2 m-4 border border-3 rounded bg-light">
+                    {% include 'layouts/components/nav.html' %}
+                </div>
+            </div>
         </div>
     </body>
 </html>

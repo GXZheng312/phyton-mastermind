@@ -1,10 +1,16 @@
 from mastermind import controllers
 from flask import Blueprint, render_template, redirect
+import mastermind
 
 web = Blueprint('web', __name__, static_folder='static', template_folder='templates')
 
 @web.route('/')
 def index():
+    if mastermind.mastermind_game.player == None:
+        return redirect('/load')
+
+    print(mastermind.mastermind_game.player)
+
     myData = controllers.HomeController.index()
     
     return render_template('index.html', data=myData)
@@ -15,8 +21,13 @@ def leaderboard():
     
     return render_template('leaderboard.html', data=myData)
 
-@web.route('/register')
-def register():
-    myData = controllers.LeaderboardController.index()
+@web.route('/load')
+def load():
+    myData = controllers.LoadController.index()
     
-    return render_template('register.html', data=myData)
+    return render_template('load.html', data=myData)
+
+@web.route('/', defaults={'path': ''})
+@web.route('/<path:path>')
+def catch_all(path):
+    return redirect('/') 
