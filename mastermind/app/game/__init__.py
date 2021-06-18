@@ -2,9 +2,8 @@
 # rom . import 
 
 class GameObject:
-    def __init__(self, player):
-        self.player = player
-        self.board = Board()
+    def __init__(self):
+        self.player = None
 
     def allowMultiColor(self, allow = True):
         self.isMultiColorOn = allow
