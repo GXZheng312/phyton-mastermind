@@ -1,5 +1,5 @@
 from mastermind import controllers
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect
 
 web = Blueprint('web', __name__, static_folder='static', template_folder='templates')
 
@@ -13,4 +13,10 @@ def index():
 def leaderboard():
     myData = controllers.LeaderboardController.index()
     
-    return render_template('index.html', data=myData)
+    return render_template('leaderboard.html', data=myData)
+
+@web.route('/register')
+def register():
+    myData = controllers.LeaderboardController.index()
+    
+    return render_template('register.html', data=myData)
