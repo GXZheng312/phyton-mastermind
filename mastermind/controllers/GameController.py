@@ -8,3 +8,12 @@ def index():
     mastermind.my_data.color_list = mastermind.app.game.board.COLORS
     
     return render_template('index.html', data=mastermind.my_data)
+
+def enable_cheat():
+    mastermind.my_data.cheat_enabled = True
+
+    return redirect('/')
+
+def attempt():
+
+    return redirect('/')
