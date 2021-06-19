@@ -2,7 +2,7 @@
 from . import board
 
 MAX_COLORS = 10
-MIN_COLORS = 4
+MIN_COLORS = 6
 
 class GameObject:
     def __init__(self):
