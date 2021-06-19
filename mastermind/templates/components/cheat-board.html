@@ -1,0 +1,11 @@
+<div>
+    <div class="d-flex">
+        {% for n in data.mastermind_game.board.answer %}
+        <div>
+            <div class="game-block g-{{data.color_list[n]}}">
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

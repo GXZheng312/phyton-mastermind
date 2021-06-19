@@ -8,8 +8,14 @@
         {% include 'components/history-board.html' %}
     </div>
 </div>
+
 <div>
-    {% include 'components/cheat-board.html' %}
+    <a href="game/enable-cheat" class="btn btn-outline-secondary"> Enable cheat </a>
+
+    {% if data.cheat_enabled %}
+        {% include 'components/cheat-board.html' %}
+    {% endif %}
+    
 </div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 from mastermind import controllers
 from flask import Blueprint, redirect
-\
+
 web = Blueprint('web', __name__, static_folder='static', template_folder='templates')
 
 @web.route('/')
@@ -26,6 +26,15 @@ def setting():
 @web.route('/save-setting')
 def save_setting():
     return controllers.SettingController.save_setting()
+
+@web.route('/game/enable-cheat')
+def enable_cheat():
+    return controllers.GameController.index()
+
+@web.route('/game/send-attempt')
+def send_attempt():
+    return controllers.GameController.index()
+
 
 @web.route('/', defaults={'path': ''})
 @web.route('/<path:path>')
