@@ -1,11 +1,48 @@
-<div class="ps-4 align-middle">
-    {% if data.game_object is defined %}
-        {% if data.game_object.player is defined %}
-            player: {{ data.game_object.player.name }}
-        {% else %}
+{% if data.mastermind_game is defined %}
+<div class="p-2 d-flex flex-column justify-content-around h-100 fs-5">
+    <div class="d-flex justify-content-evenly">
+        <div>
+            <strong>Game:</strong> 
+            Unknown
+        </div> 
+        <div>
+            <strong>Multi color:</strong> 
+            {% if data.mastermind_game.isMultiColorOn %}
+                Enabled
+            {% else %}
+                Disabled
+            {% endif %}
+        </div> 
+        <div>
+            <strong>Amount of Color:</strong> 
+            {{ data.mastermind_game.amountOfColors }}
+        </div> 
+        <div>
+            <strong>Amount of Position:</strong> 
+            {{ data.mastermind_game.board.positions }}
+        </div> 
+    </div>
+    <div class="d-flex justify-content-evenly">
+        <div>
+            <strong>Player: </strong>
+            {% if data.mastermind_game.player %}
+            {{ data.mastermind_game.player.name }}
+            {% else %}
             player is not loaded
-        {% endif %}
-    {% else %}
-        game is not loaded
-    {% endif %}
+            {% endif %}
+        </div> 
+        <div>
+            <strong>Amount played: </strong>
+            Unknown
+        </div> 
+        <div>
+            <strong>Cheat: </strong> 
+            {% if data.cheat_enabled %}
+                Enabled
+            {% else %}
+                Disabled
+            {% endif %}
+        </div> 
+    </div>
 </div>
+{% endif %}
