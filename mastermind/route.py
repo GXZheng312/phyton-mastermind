@@ -28,7 +28,7 @@ def load():
 @web.route('/load-username')
 def load_username():
     username = request.args.get('username')
-    mastermind.mastermind_game.setPlayer('player')
+    mastermind.mastermind_game.setPlayer(username)
 
     return redirect('/')
 

@@ -5,8 +5,12 @@ JSON_FILE_PATH = 'mastermind/resources/data.json'
 DEFAULT_DATA = { "players": [
     {
         "name": "guest",
-        "finished_turn": 10,
-        "datetime": "17-6-2021T15:00",
+        "games": [{
+            "finished_turn": 10,
+            "cheated": False,
+            "datetime": "17-6-2021T15:00",
+        },
+        ]
      }
 ]}
 
