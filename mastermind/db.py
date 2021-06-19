@@ -1,8 +1,6 @@
 import json
 import os
 
-from flask import jsonify
-
 JSON_FILE_PATH = 'mastermind/resources/data.json'
 DEFAULT_DATA = { "players": [
     {
@@ -16,6 +14,7 @@ DEFAULT_DATA = { "players": [
      }
 ]}
 
+
 def init_check():
     if os.path.isfile(JSON_FILE_PATH) is False:
         print("File does not exist, create new one")
@@ -24,25 +23,31 @@ def init_check():
         outfile.close()
         print("new file created")
 
+
 def get_player(name):
     if name is not None:
         with open(JSON_FILE_PATH) as file:
             data = json.load(file)
             return next((player_data for player_data in data["players"] if player_data['name'] == name), None)
 
-def save_player(name):
-    jsonFile = open("mastermind/resources/data.json", "r")
-    data = json.load(jsonFile)
-    jsonFile.close()
 
-    data["players"] = {[
-        {
-            "name" = player_data["name"],
-            "games" = [
-                "finished_turn": player_data["finished_turn"],
-                "cheated": player_data["cheated"],
-        ]
-    }
-    }]
+def save_player(name, finished_turn, cheated):
+    if os.path.exists(JSON_FILE_PATH):
+        with open(JSON_FILE_PATH, "r+") as file:
+            old_data = json.load(file)
+            data = {
+                    "name": name,
+                    "games": [{
+                        "finished_turn": finished_turn,
+                        "cheated": cheated,
+                    },
+                ]
+            }
+            old_data["players"].append(data)
+            file.seek(0)
+            json.dump(old_data, file)
 
-            return jsonify([player_data.to_json() for player_data in data])
+
+save_player("ody", 25, True)
+save_player("jacky", 45, False)
+save_player("test", 3, True)
