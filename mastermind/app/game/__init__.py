@@ -13,6 +13,7 @@ class GameObject:
 
     def setPlayer(self, username):
         self.player = Player(username)
+        
 
 
 class Board:
