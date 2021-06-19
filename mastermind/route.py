@@ -23,7 +23,7 @@ def load_username():
 def setting():
     return controllers.SettingController.index()
 
-@web.route('/save-setting')
+@web.route('/save-setting', methods=['GET', 'POST'])
 def save_setting():
     return controllers.SettingController.save_setting()
 
@@ -31,7 +31,7 @@ def save_setting():
 def enable_cheat():
     return controllers.GameController.enable_cheat()
 
-@web.route('/game/send-attempt')
+@web.route('/game/send-attempt', methods=['GET', 'POST'])
 def send_attempt():
     return controllers.GameController.attempt()
 

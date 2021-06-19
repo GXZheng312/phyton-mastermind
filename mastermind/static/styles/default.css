@@ -70,3 +70,6 @@ input {
     margin: 2px;
 }
 
+.selected-block {
+    border: 15px double black;
+}
