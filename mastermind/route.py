@@ -25,6 +25,13 @@ def load():
     
     return render_template('load.html', data=myData)
 
+@web.route('/setting')
+def setting():
+    myData = controllers.LoadController.index()
+    
+    return render_template('setting.html', data=myData)
+
+
 @web.route('/load-username')
 def load_username():
     username = request.args.get('username')
