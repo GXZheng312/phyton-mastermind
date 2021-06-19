@@ -1,5 +1,5 @@
 from mastermind import controllers
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template, redirect, request
 import mastermind
 
 web = Blueprint('web', __name__, static_folder='static', template_folder='templates')
@@ -26,6 +26,12 @@ def load():
     myData = controllers.LoadController.index()
     
     return render_template('load.html', data=myData)
+
+@web.route('/load-username')
+def load_username():
+    username = request.args.get('username')
+
+    return redirect('/')
 
 @web.route('/', defaults={'path': ''})
 @web.route('/<path:path>')

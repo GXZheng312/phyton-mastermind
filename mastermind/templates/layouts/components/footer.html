@@ -1,0 +1,11 @@
+<div class="ps-4 align-middle">
+    {% if data.game_object is defined %}
+        {% if data.game_object.player is defined %}
+            player: {{ data.game_object.player.name }}
+        {% else %}
+            player is not loaded
+        {% endif %}
+    {% else %}
+        game is not loaded
+    {% endif %}
+</div>

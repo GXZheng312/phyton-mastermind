@@ -2,6 +2,15 @@ body {
     background-color: grey;
 }
 
+input {
+    font-size: 36px !important;
+    text-align: center;
+}
+
+.footer {
+    height: 12vh;
+}
+
 .game-menu {
     display: flex;
     flex-direction: column;
