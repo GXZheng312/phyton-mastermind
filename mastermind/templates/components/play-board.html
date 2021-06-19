@@ -1,4 +1,4 @@
-<form action="game/send-attempt">
+<form action="game/send-attempt" method="POST">
     <div class="fs-2 fw-bold"> Play Board </div>
     <div>
         <div class="d-flex">
@@ -22,5 +22,5 @@
         {% endfor %}
     </div>
 
-    <button> Send </button>
+    <input type="submit" class="btn btn-secondary" value="Send">
 </form>

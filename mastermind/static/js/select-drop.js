@@ -51,7 +51,7 @@ function hiddenInput(index, value){
     let input = document.createElement("INPUT");
     input.setAttribute("type", "hidden");
     input.setAttribute("value", value);
-    input.setAttribute("name", "block[" + index +"]");
+    input.setAttribute("name", "block" + index);
 
     return input;
 }

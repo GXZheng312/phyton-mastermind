@@ -1,5 +1,5 @@
 import mastermind
-from flask import render_template, redirect
+from flask import render_template, redirect, request
 
 def index():
     if mastermind.mastermind_game.player == None:
@@ -7,7 +7,7 @@ def index():
 
     mastermind.my_data.color_list = mastermind.app.game.board.COLORS
     mastermind.my_data.status = "Running"
-    
+
     return render_template('index.html', data=mastermind.my_data)
 
 def enable_cheat():
@@ -16,5 +16,6 @@ def enable_cheat():
     return redirect('/')
 
 def attempt():
+    
 
     return redirect('/')
