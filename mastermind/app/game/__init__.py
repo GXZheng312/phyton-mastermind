@@ -20,7 +20,7 @@ class GameObject:
 
 class Board:
     def __init__(self):
-        self.position = board.MIN_POISTION
+        self.positions = board.MIN_POISTION
 
 class Player:
     def __init__(self, name):
