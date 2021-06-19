@@ -1,3 +1,3 @@
-class Board:
-    def __init__(self):
-        self.row
+MAX_POSITION = 10
+MIN_POISTION = 4
+
