@@ -6,6 +6,7 @@ def index():
         return redirect('/load')
 
     mastermind.my_data.color_list = mastermind.app.game.board.COLORS
+    mastermind.my_data.status = "Running"
     
     return render_template('index.html', data=mastermind.my_data)
 
