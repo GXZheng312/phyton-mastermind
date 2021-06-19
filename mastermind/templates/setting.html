@@ -7,7 +7,7 @@
         <form action="save-setting" method="get">
             <div class="mb-3">
                 <label for="amountColorInput" class="form-label fs-3">Amount of color (6-10)</label>
-                <input type="number" value={{data.mastermind_game.amountOfColors}} name="colors" class="form-control text-center" id="amountColorInput">
+                <input type="number" value={{data.mastermind_game.amount_color}} name="colors" class="form-control text-center" id="amountColorInput">
             </div>
 
             <div class="mb-3">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-check form-switch ps-0 d-flex align-items-center align-self-center">
-                {% if data.mastermind_game.isMultiColorOn %}
+                {% if data.mastermind_game.multi_color %}
                     <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3" id="flexSwitchCheckMultiColor" checked>
                 {% else %}
                     <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3" id="flexSwitchCheckMultiColor">

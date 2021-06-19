@@ -8,12 +8,13 @@ class GameObject:
     def __init__(self):
         self.player = None
         self.board = Board()
-        self.isMultiColorOn = False
-        self.amountOfColors = MIN_COLORS
+        self.multi_color = False
+        self.amount_color = MIN_COLORS
+
 
     def setPlayer(self, username):
         self.player = Player(username)
-        
+
 
 
 class Board:
