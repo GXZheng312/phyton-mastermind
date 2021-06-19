@@ -9,10 +9,8 @@ def index():
     if mastermind.mastermind_game.player == None:
         return redirect('/load')
 
-    print(mastermind.mastermind_game.player)
-
     myData = controllers.HomeController.index()
-    
+
     return render_template('index.html', data=myData)
 
 @web.route('/leaderboard')
@@ -30,6 +28,7 @@ def load():
 @web.route('/load-username')
 def load_username():
     username = request.args.get('username')
+    mastermind.mastermind_game.setPlayer('player')
 
     return redirect('/')
 

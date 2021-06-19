@@ -3,12 +3,11 @@ import os
 
 JSON_FILE_PATH = 'mastermind/resources/data.json'
 DEFAULT_DATA = { "players": [
-    {"name": "guest",
-     "history": [{
-         "finished_turn": 10,
-         "datetime": "17-6-2021T15:00"}
-     ]}
-
+    {
+        "name": "guest",
+        "finished_turn": 10,
+        "datetime": "17-6-2021T15:00",
+     }
 ]}
 
 def init_check():
