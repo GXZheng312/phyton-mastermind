@@ -1,11 +1,20 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-<div>
-    <h2>{{ data.name }}</h2>
-    <div>
-        {% for pet in data.pets %}
-        <strong> {{pet}} </strong>
-        {% endfor %}
+<div class="row">
+    <div class="col">
+        {% include 'components/play-board.html' %}
+    </div>
+    <div class="col">
+        {% include 'components/history-board.html' %}
     </div>
 </div>
+
+<div>
+    {% if data.cheat_enabled %}
+        {% include 'components/cheat-board.html' %}
+    {% else %}
+        <a href="game/enable-cheat" class="btn btn-outline-secondary"> Enable cheat </a>
+    {% endif %}
+</div>
+
 {% endblock %}

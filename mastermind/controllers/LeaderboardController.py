@@ -1,7 +1,6 @@
-def index():
-    data = {
-        'name': 'Ody',
-        'pets': ['doggo', 'cat', 'fish']
-    }
+import mastermind
+from flask import render_template
 
-    return data
+def index():
+    return render_template('leaderboard.html', data=mastermind.my_data)
+

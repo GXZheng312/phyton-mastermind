@@ -1,43 +1,40 @@
 from mastermind import controllers
-from flask import Blueprint, render_template, redirect, request
-import mastermind
+from flask import Blueprint, redirect
 
 web = Blueprint('web', __name__, static_folder='static', template_folder='templates')
 
 @web.route('/')
 def index():
-    if mastermind.mastermind_game.player == None:
-        return redirect('/load')
-
-    myData = controllers.HomeController.index()
-
-    return render_template('index.html', data=myData)
+    return controllers.GameController.index()
 
 @web.route('/leaderboard')
-def leaderboard():
-    myData = controllers.LeaderboardController.index()
-    
-    return render_template('leaderboard.html', data=myData)
+def leaderboard(): 
+    return controllers.LeaderboardController.index()
 
 @web.route('/load')
 def load():
-    myData = controllers.LoadController.index()
-    
-    return render_template('load.html', data=myData)
-
-@web.route('/setting')
-def setting():
-    myData = controllers.LoadController.index()
-    
-    return render_template('setting.html', data=myData)
-
+    return controllers.LoaderController.index()
 
 @web.route('/load-username')
 def load_username():
-    username = request.args.get('username')
-    mastermind.mastermind_game.setPlayer(username)
+    return controllers.LoaderController.load_username()
 
-    return redirect('/')
+@web.route('/setting')
+def setting():
+    return controllers.SettingController.index()
+
+@web.route('/save-setting')
+def save_setting():
+    return controllers.SettingController.save_setting()
+
+@web.route('/game/enable-cheat')
+def enable_cheat():
+    return controllers.GameController.enable_cheat()
+
+@web.route('/game/send-attempt')
+def send_attempt():
+    return controllers.GameController.attempt()
+
 
 @web.route('/', defaults={'path': ''})
 @web.route('/<path:path>')
