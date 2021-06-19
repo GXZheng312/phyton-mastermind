@@ -6,4 +6,4 @@ def index():
         'pets': ['doggo', 'cat', 'fish']
     }
 
-    return  render_template('setting.html', data=myData)
+    return render_template('setting.html', data=myData)

@@ -27,4 +27,4 @@ def get_player(name):
         with open(JSON_FILE_PATH) as file:
             data = json.load(file)
             return next((player_data for player_data in data["players"] if player_data['name'] == name), None)
-            
+

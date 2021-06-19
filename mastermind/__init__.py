@@ -1,5 +1,9 @@
 from . import app, route, db, controllers
 
-CHEAT_ENABLED = False
+#always app
 db.init_check()
-mastermind_game = app.game.GameObject()
+
+# dependency injection
+MyData = app.MyData()
+MyData.cheat_enabled = False 
+MyData.mastermind_game = app.game.GameObject()
