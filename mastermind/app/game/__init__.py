@@ -10,16 +10,21 @@ class GameObject:
         self.board = Board()
         self.multi_color = False
         self.amount_color = MIN_COLORS
+        self.board_history = []
 
-
-    def setPlayer(self, username):
-        self.player = Player(username)
-
+    def set_player(self, name):
+        self.player = Player(name)
 
 
 class Board:
     def __init__(self):
         self.positions = board.MIN_POISTION
+        self.answer = []
+    
+    def setup_board(self):
+        self.answer
+
+
 
 class Player:
     def __init__(self, name):

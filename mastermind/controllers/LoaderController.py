@@ -6,6 +6,6 @@ def index():
 
 def load_username():
     username = request.args.get('username')
-    mastermind.mastermind_game.setPlayer(username)
+    mastermind.mastermind_game.set_player(username) 
 
     return redirect('/')
