@@ -8,36 +8,23 @@ web = Blueprint('web', __name__, static_folder='static', template_folder='templa
 def index():
     if mastermind.mastermind_game.player == None:
         return redirect('/load')
-
-    myData = controllers.HomeController.index()
-
-    return render_template('index.html', data=myData)
+    return controllers.GameController.index()
 
 @web.route('/leaderboard')
-def leaderboard():
-    myData = controllers.LeaderboardController.index()
-    
-    return render_template('leaderboard.html', data=myData)
+def leaderboard(): 
+    return controllers.LeaderboardController.index()
 
 @web.route('/load')
 def load():
-    myData = controllers.LoadController.index()
-    
-    return render_template('load.html', data=myData)
+    return controllers.LoaderController.index()
 
 @web.route('/setting')
 def setting():
-    myData = controllers.LoadController.index()
-    
-    return render_template('setting.html', data=myData)
-
+    return controllers.SettingController.index()
 
 @web.route('/load-username')
 def load_username():
-    username = request.args.get('username')
-    mastermind.mastermind_game.setPlayer(username)
-
-    return redirect('/')
+    return controllers.LoaderController.loadUserName()
 
 @web.route('/', defaults={'path': ''})
 @web.route('/<path:path>')

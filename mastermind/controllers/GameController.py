@@ -1,4 +1,3 @@
-import mastermind
 from flask import render_template
 
 def index():
@@ -7,5 +6,4 @@ def index():
         'pets': ['doggo', 'cat', 'fish']
     }
 
-    return render_template('leaderboard.html', data=myData)
-
+    return render_template('index.html', data=myData)
