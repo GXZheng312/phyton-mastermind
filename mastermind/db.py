@@ -1,17 +1,20 @@
 import json
 import os
+import time
+from datetime import date
 
+TODAY = date.today()
 JSON_FILE_PATH = 'mastermind/resources/data.json'
-DEFAULT_DATA = { "players": [
+DEFAULT_DATA = {"players": [
     {
         "name": "guest",
         "games": [{
             "finished_turn": 10,
             "cheated": False,
-            "datetime": "17-6-2021T15:00",
+            "datetime": TODAY.strftime("%B %d, %Y")
         },
         ]
-     }
+    }
 ]}
 
 
@@ -35,19 +38,29 @@ def save_player(name, finished_turn, cheated):
     if os.path.exists(JSON_FILE_PATH):
         with open(JSON_FILE_PATH, "r+") as file:
             old_data = json.load(file)
-            data = {
-                    "name": name,
-                    "games": [{
-                        "finished_turn": finished_turn,
-                        "cheated": cheated,
-                    },
-                ]
-            }
-            old_data["players"].append(data)
-            file.seek(0)
-            json.dump(old_data, file)
+            found = False
+            for player in old_data["players"]:
+                if player["name"] == name:
+                    found = True
+                    player["games"].append({
+                            "finished_turn": finished_turn,
+                            "cheated": cheated,
+                            "datetime": TODAY.strftime("%B %d, %Y")
+                    })
+                    file.seek(0)
+                    json.dump(old_data, file)
+                    break
 
+            if not found:
+                old_data["players"].append({
+                        "name": name,
+                        "games": [{
+                            "finished_turn": finished_turn,
+                            "cheated": cheated,
+                            "datetime": TODAY.strftime("%B %d, %Y")
+                        },
+                        ]
+                    })
+                file.seek(0)
+                json.dump(old_data, file)
 
-save_player("ody", 25, True)
-save_player("jacky", 45, False)
-save_player("test", 3, True)
