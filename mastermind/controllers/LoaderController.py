@@ -9,7 +9,7 @@ def index():
 
     return render_template('load.html', data=myData)
 
-def loadUserName():
+def load_username():
     username = request.args.get('username')
     mastermind.mastermind_game.setPlayer(username)
 
