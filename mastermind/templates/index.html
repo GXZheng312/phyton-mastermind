@@ -1,4 +1,15 @@
 {% extends "layouts/default.html" %}
 {% block content %}
+<div class="row">
+    <div class="col">
+        {% include 'components/play-board.html' %}
+    </div>
+    <div class="col">
+        {% include 'components/history-board.html' %}
+    </div>
+</div>
+<div>
+    {% include 'components/cheat-board.html' %}
+</div>
 
 {% endblock %}

@@ -46,6 +46,27 @@ input {
     height: 80vh;
 }
 
-.platform div {
+.platform > div {
     height: 100%;
 }
+
+/* game section */
+/* ['blue', 'red', 'purple', 'yellow', 'green', 'orange', 'aqua', 'navy', 'pink', 'brown'] */
+.g-blue {background-color: blue;}
+.g-red {background-color: red;}
+.g-purple {background-color: purple;}
+.g-yellow {background-color: yellow;}
+.g-green {background-color: green;}
+.g-orange {background-color: orange;}
+.g-aqua {background-color: aqua;}
+.g-navy {background-color: navy;}
+.g-pink {background-color: pink;}
+.g-brown {background-color: brown;}
+
+.game-block {
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 2px;
+}
+

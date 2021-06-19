@@ -1,0 +1,23 @@
+<form>
+    <div>
+        <div class="d-flex">
+            {% for n in range(data.mastermind_game.board.positions) %}
+            <div>
+                <div class="text-center"> P{{n+1}} </div>
+                <div class="game-block">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="d-flex">
+        {% for n in range(data.mastermind_game.amount_color) %}
+        <div class="game-block g-{{data.color_list[n]}}">
+            <input type="hidden" value=n />
+        </div>
+        {% endfor %}
+    </div>
+
+    <button> Send </button>
+</form>

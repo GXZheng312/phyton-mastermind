@@ -20,7 +20,7 @@ class GameObject:
     def new_game(self):
         self.board.setup_board(self.amount_color)
         self.board_history = []
-        
+
 
 class Board:
     def __init__(self):
@@ -31,6 +31,8 @@ class Board:
         for i in range(0, self.positions):
             n = random.randint(0, amount_color)
             self.answer.append(n)
+
+    
 
 
 
