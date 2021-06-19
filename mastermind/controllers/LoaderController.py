@@ -2,12 +2,7 @@ import mastermind
 from flask import render_template, request, redirect
 
 def index():
-    myData = {
-        'name': 'Jacky',
-        'pets': ['doggo', 'cat', 'fish']
-    }
-
-    return render_template('load.html', data=myData)
+    return render_template('load.html', data=mastermind.MyData)
 
 def load_username():
     username = request.args.get('username')
