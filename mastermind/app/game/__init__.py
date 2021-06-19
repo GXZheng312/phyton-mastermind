@@ -14,9 +14,6 @@ class GameObject:
     def setPlayer(self, username):
         self.player = Player(username)
 
-    def allowMultiColor(self, allow = True):
-        self.isMultiColorOn = allow
-
 
 class Board:
     def __init__(self):
