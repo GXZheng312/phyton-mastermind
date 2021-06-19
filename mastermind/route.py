@@ -6,8 +6,6 @@ web = Blueprint('web', __name__, static_folder='static', template_folder='templa
 
 @web.route('/')
 def index():
-    if mastermind.mastermind_game.player == None:
-        return redirect('/load')
     return controllers.GameController.index()
 
 @web.route('/leaderboard')
