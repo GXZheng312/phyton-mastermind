@@ -42,11 +42,15 @@ def check_win(blocks):
         if(blocks[n] != mastermind.mastermind_game.board.solution[n]):
             return False
 
+    mastermind.my_data.status = "game won"
     return True
 
 
 def won_screen():
     if mastermind.my_data.status == "running":
+        return redirect('/')
+
+    if mastermind.my_data.status == "game won":
         mastermind.mastermind_game.player.played += 1
         player_name = mastermind.mastermind_game.player.name
         turn_finished = len(mastermind.mastermind_game.board_history)
