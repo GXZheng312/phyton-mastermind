@@ -1,5 +1,5 @@
 import mastermind
-from flask import render_template, request
+from flask import render_template
 
 def index():
     all_games = []
