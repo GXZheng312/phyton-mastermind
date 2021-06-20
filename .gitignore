@@ -130,3 +130,5 @@ dmypy.json
 
 # Resources folder
 resources/
+
+mastermind/resources/
