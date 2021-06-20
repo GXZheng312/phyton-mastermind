@@ -11,15 +11,13 @@
         </tr>
       </thead>
       <tbody>
-      {% for player in data.all_players %}
-        {% for game in player["games"] %}
+        {% for game in data.all_games %}
         <tr>
-          <td>{{ player["name"] }}</td>
+          <td>{{ game["player"] }}</td>
           <td>{{ game["finished_turn"] }}</td>
           <td>{{ game["cheated"] }}</td>
           <td>{{ game["datetime"] }}</td>
         </tr>
-        {% endfor %}
       {% endfor %}
       </tbody>
     </table>
