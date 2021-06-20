@@ -46,14 +46,12 @@ def check_win(blocks):
 
 
 def won_screen():
-    if mastermind.my_data.status == "game ended":
+    if mastermind.my_data.status == "running":
         mastermind.mastermind_game.player.played += 1
         player_name = mastermind.mastermind_game.player.name
         turn_finished = len(mastermind.mastermind_game.board_history)
         cheated = mastermind.my_data.cheat_enabled
         db.save_player(player_name, turn_finished, cheated)
-
-    if mastermind.my_data.status == "running":
         mastermind.my_data.status = "game ended"
 
     return render_template('won.html', data=mastermind.my_data)
