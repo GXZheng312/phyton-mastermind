@@ -15,5 +15,6 @@ def load_username():
     mastermind.mastermind_game.set_player(username)
     mastermind.mastermind_game.player.played = amount_played
     mastermind.my_data.cheat_enabled = False
+    mastermind.my_data.status = "loading player"
 
     return redirect('/')
