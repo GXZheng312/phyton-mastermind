@@ -12,7 +12,7 @@ venv\Scripts\activate
 ```
 To run flask on development (windows):
 ```powershell
-&evn:FLASK_ENV="development"
+$evn:FLASK_ENV="development"
 $env:FLASK_APP="setup.py"
 flask run
 ```
