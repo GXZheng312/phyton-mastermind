@@ -1,6 +1,7 @@
 import mastermind
 from flask import render_template, request
 
+
 def index():
     all_games = []
     for player in mastermind.db.get_all_players():
@@ -11,4 +12,3 @@ def index():
     mastermind.my_data.all_games = all_games
 
     return render_template('leaderboard.html', data=mastermind.my_data)
-

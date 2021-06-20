@@ -1,1 +1,54 @@
-{"players": [{"name": "guest", "games": [{"finished_turn": 10, "cheated": false, "datetime": "June 20, 2021"}]}, {"name": "numer2", "games": [{"finished_turn": 4, "cheated": true, "datetime": "June 20, 2021"}]}, {"name": "adsf", "games": [{"finished_turn": 5, "cheated": false, "datetime": "June 20, 2021"}]}, {"name": "zcxv", "games": [{"finished_turn": 9, "cheated": false, "datetime": "June 20, 2021"}]}, {"name": "3ads", "games": [{"finished_turn": 2, "cheated": true, "datetime": "June 20, 2021"}]}]}
+{
+    "players": [
+        {
+            "name": "guest",
+            "games": [
+                {
+                    "finished_turn": 10,
+                    "cheated": false,
+                    "datetime": "June 20, 2021"
+                }
+            ]
+        },
+        {
+            "name": "numer2",
+            "games": [
+                {
+                    "finished_turn": 4,
+                    "cheated": true,
+                    "datetime": "June 20, 2021"
+                }
+            ]
+        },
+        {
+            "name": "adsf",
+            "games": [
+                {
+                    "finished_turn": 5,
+                    "cheated": false,
+                    "datetime": "June 20, 2021"
+                }
+            ]
+        },
+        {
+            "name": "zcxv",
+            "games": [
+                {
+                    "finished_turn": 9,
+                    "cheated": false,
+                    "datetime": "June 20, 2021"
+                }
+            ]
+        },
+        {
+            "name": "3ads",
+            "games": [
+                {
+                    "finished_turn": 2,
+                    "cheated": true,
+                    "datetime": "June 20, 2021"
+                }
+            ]
+        }
+    ]
+}

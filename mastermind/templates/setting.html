@@ -2,24 +2,28 @@
 {% block content %}
 <div class="d-flex w-100 justify-content-center align-items-center">
     <div class="h-auto w-50 border p-5 d-flex flex-column bg-light">
-        <h1  class="text-center w-100 mb-3">Settings</h1>
+        <h1 class="text-center w-100 mb-3">Settings</h1>
 
         <form action="save-setting" method="post">
             <div class="mb-3">
                 <label for="amountColorInput" class="form-label fs-3">Amount of color (6-10)</label>
-                <input type="number" value={{data.mastermind_game.amount_color}} name="colors" class="form-control text-center" id="amountColorInput">
+                <input type="number" value={{data.mastermind_game.amount_color}} name="colors"
+                    class="form-control text-center" id="amountColorInput">
             </div>
 
             <div class="mb-3">
                 <label for="amountPositionInput" class="form-label fs-3">Amount of Position (4-10)</label>
-                <input type="number" value={{data.mastermind_game.board.positions}} name="positions" class="form-control text-center" id="amountPositionInput">
+                <input type="number" value={{data.mastermind_game.board.positions}} name="positions"
+                    class="form-control text-center" id="amountPositionInput">
             </div>
 
             <div class="form-check form-switch ps-0 d-flex align-items-center align-self-center">
                 {% if data.mastermind_game.multi_color %}
-                    <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3" id="flexSwitchCheckMultiColor" checked>
+                <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3"
+                    id="flexSwitchCheckMultiColor" checked>
                 {% else %}
-                    <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3" id="flexSwitchCheckMultiColor">
+                <input type="checkbox" name="isMultiColorOn" class="form-check-input ms-0 mt-0 me-3"
+                    id="flexSwitchCheckMultiColor">
                 {% endif %}
 
                 <label class="form-check-label fs-3" for="flexSwitchCheckMultiColor">Allow multi color</label>

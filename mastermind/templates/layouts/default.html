@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% include 'layouts/components/header.html' %}
-    </head>
-    <body class="p-4">
-        <div class="container-fluid platform">
-            <div class="row">
-                <div class="col me-4 border border-3 rounded bg-white">
-                    {% block content %}{% endblock %} 
-                </div>
-                <div class="col-2 border border-3 rounded bg-light">
-                    {% include 'layouts/components/nav.html' %}
-                </div>
+
+<head>
+    {% include 'layouts/components/header.html' %}
+</head>
+
+<body class="p-4">
+    <div class="container-fluid platform">
+        <div class="row">
+            <div class="col me-4 border border-3 rounded bg-white">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-2 border border-3 rounded bg-light">
+                {% include 'layouts/components/nav.html' %}
             </div>
         </div>
-        <div class="footer border border-dark border-3 rounded bg-secondary mt-4">
-            {% include 'layouts/components/footer.html' %}
-        </div>
-    </body>
+    </div>
+    <div class="footer border border-dark border-3 rounded bg-secondary mt-4">
+        {% include 'layouts/components/footer.html' %}
+    </div>
+</body>
+
 </html>

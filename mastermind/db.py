@@ -49,9 +49,9 @@ def save_player(name, finished_turn, cheated):
                 if player["name"] == name:
                     found = True
                     player["games"].append({
-                            "finished_turn": finished_turn,
-                            "cheated": cheated,
-                            "datetime": TODAY.strftime("%B %d, %Y")
+                        "finished_turn": finished_turn,
+                        "cheated": cheated,
+                        "datetime": TODAY.strftime("%B %d, %Y")
                     })
                     file.seek(0)
                     json.dump(old_data, file)
@@ -59,15 +59,13 @@ def save_player(name, finished_turn, cheated):
 
             if not found:
                 old_data["players"].append({
-                        "name": name,
-                        "games": [{
-                            "finished_turn": finished_turn,
-                            "cheated": cheated,
-                            "datetime": TODAY.strftime("%B %d, %Y")
-                        },
-                        ]
-                    })
+                    "name": name,
+                    "games": [{
+                        "finished_turn": finished_turn,
+                        "cheated": cheated,
+                        "datetime": TODAY.strftime("%B %d, %Y")
+                    },
+                    ]
+                })
                 file.seek(0)
                 json.dump(old_data, file)
-
-

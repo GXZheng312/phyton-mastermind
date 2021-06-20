@@ -1,20 +1,20 @@
 var selected = false;
 
-function selectable(elem){
-    if(elem.dropped) return;
-    if(selected) selected.classList.remove('selected-block');
-    if(selected == elem) {
-        selected = false; 
+function selectable(elem) {
+    if (elem.dropped) return;
+    if (selected) selected.classList.remove('selected-block');
+    if (selected == elem) {
+        selected = false;
         return;
     }
-    
+
     selected = elem;
     selected.classList.add('selected-block');
 }
 
-function dropable(elem, index){
-    if(!selected) return;
-    if(elem.noSpace) return;
+function dropable(elem, index) {
+    if (!selected) return;
+    if (elem.noSpace) return;
 
     //append
     selected.classList.add('pin');
@@ -28,10 +28,10 @@ function dropable(elem, index){
     elem.noSpace = true;
 }
 
-function multiDropable(elem, index){
-    if(!selected) return;
-    if(elem.noSpace) return;
-    if(selected.droppedBefore) return dropable(elem, index);
+function multiDropable(elem, index) {
+    if (!selected) return;
+    if (elem.noSpace) return;
+    if (selected.droppedBefore) return dropable(elem, index);
 
     //clone
     let cln = selected.cloneNode(true);
@@ -49,7 +49,7 @@ function multiDropable(elem, index){
 }
 
 
-function hiddenInput(index, value){
+function hiddenInput(index, value) {
     let input = document.createElement("INPUT");
     input.setAttribute("type", "hidden");
     input.setAttribute("value", value);
@@ -57,6 +57,3 @@ function hiddenInput(index, value){
 
     return input;
 }
-
-
-
