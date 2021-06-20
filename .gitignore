@@ -128,4 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-mastermind/resources/data.json
+# Resources folder
+resources/
