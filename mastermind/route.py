@@ -35,6 +35,13 @@ def enable_cheat():
 def send_attempt():
     return controllers.GameController.attempt()
 
+@web.route('/game/won')
+def win():
+    return controllers.GameController.won_screen()
+
+@web.route('/game/reset')
+def reset():
+    return controllers.GameController.reset()
 
 @web.route('/', defaults={'path': ''})
 @web.route('/<path:path>')

@@ -1,1 +1,17 @@
 <div class="fs-2 fw-bold"> history Board </div>
+<div class="overflow-auto">
+    {% for history in data.mastermind_game.board_history %}
+        <div class="d-flex align-items-center">
+            <div class="fw-bold me-4">Nr. {{loop.index}}</div>
+            {% for item in history %}
+                <div class="game-block g-{{data.color_list[item.color]}}">
+                    {% if item.black_pin %}
+                        <div class="g-black pin"></div>
+                    {% elif item.white_pin %}
+                        <div class="g-white pin"></div>
+                    {% endif %}
+                </div>
+            {% endfor%}
+        </div>
+    {% endfor %}
+</div>

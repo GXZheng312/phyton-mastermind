@@ -17,7 +17,8 @@ function dropable(elem, index){
     if(elem.noSpace) return;
 
     //append
-    selected.appendChild(hiddenInput(index, selected.getAttribute('value')))
+    selected.classList.add('pin');
+    selected.appendChild(hiddenInput(index, selected.getAttribute('value')));
     elem.appendChild(selected);
 
     //reset 
@@ -35,6 +36,7 @@ function multiDropable(elem, index){
     //clone
     let cln = selected.cloneNode(true);
     cln.dropped = true;
+    cln.classList.add('pin');
     cln.classList.remove('selected-block');
 
     //append

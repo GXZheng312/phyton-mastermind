@@ -62,14 +62,25 @@ input {
 .g-navy {background-color: navy;}
 .g-pink {background-color: pink;}
 .g-brown {background-color: brown;}
+.g-black {background-color: black;}
+.g-white {background-color: white;}
 
 .game-block {
     height: 50px;
     width: 50px;
     border: 2px solid black;
     margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .selected-block {
     border: 15px double black;
+}
+
+.pin {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }
