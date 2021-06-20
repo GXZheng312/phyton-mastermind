@@ -5,6 +5,7 @@
   <table class="table table-dark table-hover" id="sortTable">
     <thead>
       <th scope="col">Username</th>
+      <th scope="col">Amount of games</th>
       <th scope="col">Amount of turns</th>
       <th scope="col">Cheated?</th>
       <th scope="col">Playdate</th>
@@ -14,6 +15,7 @@
       {% for game in data.all_games %}
       <tr>
         <td>{{ game["player"] }}</td>
+        <td>{{ game["amount_games"] }}</td>
         <td>{{ game["finished_turn"] }}</td>
         <td>{{ game["cheated"] }}</td>
         <td>{{ game["datetime"] }}</td>
