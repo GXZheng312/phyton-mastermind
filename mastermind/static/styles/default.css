@@ -84,3 +84,7 @@ input {
     width: 40px;
     border-radius: 50%;
 }
+
+.leaderboard-panel {
+    max-height: 85%;
+}

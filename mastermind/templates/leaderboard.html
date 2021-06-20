@@ -1,37 +1,27 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-{% for player in players %}
-<div class="row">
-    <form class="col" action="load-leaderboard" method="get">
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Turns</th>
-              <th scope="col">Games played</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>{{ player.name }}</td>
-              <td>{{ player.finished_turn }}</td>
-              <td>{{ player.games}}</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Larry</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-    </form>
+    <div class="fs-1 fw-bold">Leaderboard</div>
+<div class="overflow-auto leaderboard-panel">
+    <table class="table table-dark table-hover" id="sortTable">
+      <thead>
+        <th scope="col">Username</th>
+        <th scope="col">Amount of turns</th>
+        <th scope="col">Cheated?</th>
+        <th scope="col">Playdate</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for player in data.all_players %}
+        {% for game in player["games"] %}
+        <tr>
+          <td>{{ player["name"] }}</td>
+          <td>{{ game["finished_turn"] }}</td>
+          <td>{{ game["cheated"] }}</td>
+          <td>{{ game["datetime"] }}</td>
+        </tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
 </div>
 {% endblock %}
