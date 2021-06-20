@@ -20,4 +20,7 @@ def save_setting():
     if positions <= MAX_POSITION and positions >= MIN_POISTION: 
         mastermind.mastermind_game.board.positions = positions
 
+    mastermind.mastermind_game.new_game()
+    mastermind.my_data.cheat_enabled = False
+
     return redirect('/setting')

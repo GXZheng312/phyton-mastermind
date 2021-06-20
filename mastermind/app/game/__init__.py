@@ -21,7 +21,6 @@ class GameObject:
         self.board.setup_board(self.amount_color, self.multi_color)
         self.board_history = []
     
-
     def append_history(self, blocks):
         block_row = []
         
@@ -44,6 +43,7 @@ class Board:
     
     def setup_board(self, amount_color, multi):
         available_colors = []
+        self.solution = []
 
         for s in range(0, 2 if multi else 1):
             for n in range(0, amount_color):
@@ -56,3 +56,4 @@ class Board:
 class Player:
     def __init__(self, name):
         self.name = name
+        self.played = 0
